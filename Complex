@@ -1,3 +1,10 @@
+Java:
+  type: programming
+  ace_mode: java
+  color: "#b07219"
+  extensions:
+  - .java
+
 package mandelbrot;
 
 public class Complex {
