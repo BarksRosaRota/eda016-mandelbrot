@@ -1,5 +1,3 @@
-```ruby
-
 package mandelbrot;
 
 public class Complex {
@@ -54,4 +52,3 @@ public class Complex {
 		imaginary -= c.getImaginary();
 	}
 }
-```
