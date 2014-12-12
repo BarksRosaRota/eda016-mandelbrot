@@ -1,4 +1,4 @@
-Java:
+'''Java:
   type: programming
   ace_mode: java
   color: "#b07219"
@@ -59,3 +59,4 @@ public class Complex {
 		imaginary -= c.getImaginary();
 	}
 }
+'''
