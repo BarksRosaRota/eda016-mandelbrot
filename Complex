@@ -1,4 +1,4 @@
-'''Java:
+```Java:
 
 package mandelbrot;
 
@@ -54,4 +54,4 @@ public class Complex {
 		imaginary -= c.getImaginary();
 	}
 }
-'''
+```
