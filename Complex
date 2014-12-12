@@ -1,9 +1,4 @@
-'''Java:
-  type: programming
-  ace_mode: java
-  color: "#b07219"
-  extensions:
-  - .java
+'''java
 
 package mandelbrot;
 
