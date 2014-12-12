@@ -1,0 +1,54 @@
+package mandelbrot;
+
+public class Complex {
+	double real;
+	double imaginary;
+	
+	public Complex (double real, double imaginary) {
+		this.real = real;
+		this.imaginary = imaginary;
+	}
+	
+	double getReal() {
+		return real;
+	}
+	double getImaginary() {
+		return imaginary;
+	}
+	
+	double getAbs() {
+		//we don't want to calculate the square root, it will take
+		//too much processing power, which is unnecessary
+		return (Math.pow(real, 2) + Math.pow(imaginary, 2));
+	}
+	
+	void add(Complex c) {
+		real += c.getReal();
+		imaginary += c.getImaginary();
+	}
+	
+	void multiply(Complex c) {
+		
+		//why do we use temporary? remember that if we change "real" in the first part
+		//of the calculation, we still need the old value to perform the second part
+		
+		//why do we use a second temporary for c.getReal()? Check out what we do in
+		//the Generator-class, z.multiply(z), if we change "real", we also change c.getReal(),
+		//because c.getReal() = "real" if the input Complex c is actually "z".
+		//(think of how "c" in our case actually refers to "z")
+		
+		//the reason we don't use the same temporary is because the input could also be
+		//another complex number, which we don't know, so we can't use the same value
+		double realTemp = real;
+		double realTempC = c.getReal();
+		
+		//this is how you multiply imaginary numbers
+		real = (real*realTempC) - (imaginary*c.getImaginary());
+		imaginary = (realTemp*c.getImaginary()) + (imaginary*realTempC);
+	}
+	
+	void subtract(Complex c) {
+		real -= c.getReal();
+		imaginary -= c.getImaginary();
+	}
+}
